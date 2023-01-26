@@ -1,14 +1,21 @@
 import Navbar from "./componentes/Navbar";
+import { ProductosLista } from "./componentes/productos";
+import './index.css'
+
+
 
 function App() {
     return(
-        <>
-        <Navbar>
-
-        </Navbar>
         
-        </>
+        <div className="App">
+        <Navbar/>
+        <ProductosLista/>
+        
+        </div>
+        
 
     )
 }
 export default App;
+
+
