@@ -1,5 +1,6 @@
 import Navbar from "./componentes/Navbar";
-import { ProductosLista } from "./componentes/productos";
+import {  BrowserRouter as Router} from "react-router-dom";
+import {Paginas} from "./componentes/Paginas";
 import './index.css'
 
 
@@ -8,8 +9,12 @@ function App() {
     return(
         
         <div className="App">
+        <Router>
         <Navbar/>
-        <ProductosLista/>
+        <Paginas/>
+        
+        </Router>
+        
         
         </div>
         

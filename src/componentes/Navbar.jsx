@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {CartWidget} from './CartWidget'
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -9,10 +10,10 @@ function Navbar() {
       <NavContainer>
         <h2><span> Alforno </span></h2>
         <div className='links'>
-          <a href="/">Inicio</a>
-          <a href="/">Productos</a>
-          <a href="/">Contactos</a>
-          <a href="/"><CartWidget/></a>
+          <Link to="/">Inicio</Link>
+          <Link to="/productos">Productos</Link>
+          <Link to="/">Contactos</Link>
+          <Link to="/"><CartWidget/></Link>
         </div>
       </NavContainer>
 
