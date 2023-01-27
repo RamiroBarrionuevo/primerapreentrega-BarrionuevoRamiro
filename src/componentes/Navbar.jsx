@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {CartWidget} from './CartWidget'
-import { Link } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 
 function Navbar() {
