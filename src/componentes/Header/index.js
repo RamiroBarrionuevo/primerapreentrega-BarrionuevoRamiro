@@ -1,8 +1,21 @@
-import { BoxIconElement } from 'boxicons';
-import React from 'react';
+import 'boxicons';
+import React, {useContext} from 'react';
 import forno from "../../images/logo.png";
+import { DataContext } from "../../context/Dataprovider";
 import '../../index.css'
+
+
+
 export const Header = () =>{
+
+  const value= useContext(DataContext);
+  const [menu,setMenu] = value.menu;
+  const [carrito] = value.carrito;
+  
+
+  const toogleMenu = () =>{
+    setMenu(!menu)
+  }
   return(
     <header>
       <a href="#">
@@ -15,12 +28,12 @@ export const Header = () =>{
           <a href="#">INICIO</a>
         </li>
         <li>
-          <a href="#">PRODUCTOS</a>
+          <a href="/productos">PRODUCTOS</a>
         </li>
       </ul>
-      <div className="cart">
+      <div className="cart" onClick={toogleMenu}>
         <box-icon name="cart" ></box-icon>
-        <span className="item__total">0</span>
+        <span className="item__total">{carrito.length}</span>
       </div>
     </header>
   )

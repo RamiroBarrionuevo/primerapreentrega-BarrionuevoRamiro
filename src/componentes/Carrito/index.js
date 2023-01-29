@@ -9,8 +9,10 @@ import '../../index.css';
 
 export const Carrito = () => {
     const value = useContext(DataContext)
-    const[menu, setMenu] = value.menu
+    const[menu, setMenu] = value.menu;
+    const [carrito, setCarrito] = value.carrito;
 
+    
     const tooglefalse= () =>{
         setMenu(false)
     }
