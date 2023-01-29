@@ -19,6 +19,18 @@ export const Carrito = () => {
 
     const show1 = menu ? "carritos show" : "carritos";
     const show2 = menu ? "carrito show" : "carrito";
+    
+    const removeProducto = id => {
+        if(window.confirm("¿Quieres suspender el producto")){
+            carrito.forEach((item, index)=>{
+                if(item.id === id){
+                    item.cantidad = 1;
+                carrito.splice(index, 1)
+                }
+            })
+        }
+            setCarrito([...carrito])
+    }
 
 
 
@@ -32,51 +44,25 @@ export const Carrito = () => {
                 </div>
                 <h2>Su carrito</h2>
                 <div className="carrito__center">
+                    {
+                        carrito.map((productos)=>(
                     <div className="carrito__item">
-                        <img src={Card} alt=""/>
+                        <img src={productos.image} alt=""/>
                         <div>
-                            <h3>American</h3>
-                            <p className="price">$345</p>
+                            <h3>{productos.title}</h3>
+                            <p className="price">{productos.price}</p>
                         </div>
                         <div>
                             <box-icon name="up-arrow" type="solid"></box-icon>
-                            <p className="cantidad">1</p>
+                            <p className="cantidad">{productos.cantidad}</p>
                             <box-icon name="down-arrow" type="solid"></box-icon>
                         </div>
-                        <div className="remove__item">
+                        <div className="remove__item" onClick={() =>removeProducto(productos.id)}>
                             <box-icon name="trash"></box-icon>
                         </div>
                     </div>
-                    <div className="carrito__item">
-                        <img src={Card} alt=""/>
-                        <div>
-                            <h3>American</h3>
-                            <p className="price">$345</p>
-                        </div>
-                        <div>
-                            <box-icon name="up-arrow" type="solid"></box-icon>
-                            <p className="cantidad">1</p>
-                            <box-icon name="down-arrow" type="solid"></box-icon>
-                        </div>
-                        <div className="remove__item">
-                            <box-icon name="trash"></box-icon>
-                        </div>
-                    </div>
-                    <div className="carrito__item">
-                        <img src={Card} alt=""/>
-                        <div>
-                            <h3>American</h3>
-                            <p className="price">$345</p>
-                        </div>
-                        <div>
-                            <box-icon name="up-arrow" type="solid"></box-icon>
-                            <p className="cantidad">1</p>
-                            <box-icon name="down-arrow" type="solid"></box-icon>
-                        </div>
-                        <div className="remove__item">
-                            <box-icon name="trash"></box-icon>
-                        </div>
-                    </div>
+                    ))
+                }
                 </div>
                 <div className="carrito__footer">
                     <h3>Total : $2345</h3>
