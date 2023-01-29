@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./componentes/Navbar";
+import { Header } from "./componentes/Header";
 import {  BrowserRouter as Router} from "react-router-dom";
 import {Paginas} from "./componentes/Paginas";
 import { DataProvider } from "./context/Dataprovider";
@@ -14,7 +14,7 @@ function App() {
         <DataProvider>
         <div className="App">
         <Router>
-        <Navbar/>
+        <Header/>
         <Carrito/>
         <Paginas/>
         
