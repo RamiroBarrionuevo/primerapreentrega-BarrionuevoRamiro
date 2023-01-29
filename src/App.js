@@ -4,6 +4,8 @@ import {  BrowserRouter as Router} from "react-router-dom";
 import {Paginas} from "./componentes/Paginas";
 import { DataProvider } from "./context/Dataprovider";
 import './index.css'
+import { Carrito } from "./componentes/Carrito/index";
+import 'boxicons'
 
 
 
@@ -13,6 +15,7 @@ function App() {
         <div className="App">
         <Router>
         <Navbar/>
+        <Carrito/>
         <Paginas/>
         
         </Router>
