@@ -31,9 +31,9 @@ export const ProductoDetalles = () => {
                     <p className="price">${detalle.price}</p>
                     <button onClick={()=>addCarrito(detalle.id)}> Añadir al carrito</button>
                     <img src={detalle.image} alt={detalle.title} />
-                    <input type="range" min="1" max="36" />
+                    
                     <div className="description">
-                        <p><b>Descripcion</b>Loremsfafajfjfajfjajfajfjiafiafnaifjniafnianfiaifnainfianfianfinafinaifnifn</p>
+                        <p><b>Descripción: </b>{detalle.descripcion}</p>
                     </div>
                 </div>
             }

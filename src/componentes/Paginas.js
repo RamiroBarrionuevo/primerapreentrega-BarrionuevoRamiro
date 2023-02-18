@@ -8,7 +8,7 @@ export const Paginas = () => {
     return (
         <section>
             <Routes>
-                <Route path="/inicio" element={<Inicio/>}/>
+                <Route path="#" element={<Inicio/>}/>
                 <Route path="/productos"  element={<ProductosLista/>}/>
                 <Route path="/producto/:id"  element={<ProductoDetalles/>}/>
             </Routes>
